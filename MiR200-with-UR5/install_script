@@ -17,3 +17,12 @@ git clone -b melodic-devel https://github.com/pal-robotics/gazebo_ros_link_attac
 
 cd ..
 catkin_make -j4
+
+#Launch Command
+roslaunch mir_ur5 system_sim.launch 
+
+#Install GUI to control the UR
+sudo apt-get install ros-melodic-rqt-joint-trajectory-controller
+
+#Start GUI
+rosrun rqt_joint_trajectory_controller rqt_joint_trajectory_controller
