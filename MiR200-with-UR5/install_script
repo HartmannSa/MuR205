@@ -11,6 +11,7 @@ sudo apt-get install ros-melodic-moveit-visual-tools
 #!Edit the following path to your catkin_ws
 cd ~/catkin_ws/src
 
+#Mir200_Sim Package needs to be installed as well (e.g. mir_gazebo is used)
 git clone https://github.com/Heenne/MiR200-with-UR5.git
 git clone https://github.com/ros-industrial/universal_robot
 git clone -b melodic-devel https://github.com/pal-robotics/gazebo_ros_link_attacher.git
