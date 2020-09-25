@@ -62,7 +62,7 @@
   </xacro:macro>
 
     <!-- camera -->
-    <gazebo reference="robot1_tf/camera_link">  
+    <!--gazebo reference="robot1_tf/camera_link">  
       <sensor type="depth" name="camera">
         <plugin name="kinect_camera_controller" filename="libgazebo_ros_openni_kinect.so">
           <cameraName>camera</cameraName>
@@ -83,6 +83,6 @@
           <pointCloudCutoff>0.4</pointCloudCutoff>
         </plugin>
       </sensor>
-    </gazebo>
+    </gazebo-->
 
 </robot>
