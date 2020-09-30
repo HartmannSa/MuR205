@@ -287,7 +287,7 @@
         so that ros and opencv can operate on the camera frame correctly -->
     <!-- these values have to be these values otherwise the gazebo camera image
         won't be aligned properly with the frame it is supposedly originating from --> 
-    <xacro:sensor_d435 parent="${prefix}base_link">
+    <xacro:sensor_d435 parent="${prefix}base_link" tf_prefix="${prefix}">
       <origin xyz="0.42 0 0.27" rpy="0 0.2 0"/>
     </xacro:sensor_d435>
 
