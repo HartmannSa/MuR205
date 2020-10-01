@@ -138,7 +138,7 @@
     </gazebo>
   </xacro:macro>
 
-  <xacro:macro name="mir_200" params="prefix">
+  <xacro:macro name="mir_200" params="ns_prefix prefix">
     <link name="${prefix}base_footprint" />
 
     <joint name="${prefix}base_joint" type="fixed">
@@ -243,8 +243,7 @@
     <!-- disabled, because it doesn't make a difference in Gazebo: -->
     <!-- <xacro:set_all_wheel_frictions prefix="${prefix}"/> -->
 
-    <p3d_base_controller prefix="${prefix}" />   
-    
+    <p3d_base_controller prefix="${prefix}" />       
 
     <!-- Camera -->    
     <!-- (origin of camera_joint is position of realsense) -->
@@ -287,7 +286,7 @@
         so that ros and opencv can operate on the camera frame correctly -->
     <!-- these values have to be these values otherwise the gazebo camera image
         won't be aligned properly with the frame it is supposedly originating from --> 
-    <xacro:sensor_d435 parent="${prefix}base_link" tf_prefix="${prefix}">
+    <xacro:sensor_d435 parent="${prefix}base_link" topics_ns="${ns_prefix}" tf_prefix="${prefix}">
       <origin xyz="0.42 0 0.27" rpy="0 0.2 0"/>
     </xacro:sensor_d435>
 

@@ -20,7 +20,7 @@
         <xacro:arg name="tf_prefix" value="$(arg tf_prefix)"/>
     </xacro:include>
 
-    <xacro:mir_200 prefix="$(arg tf_prefix)"/>
+    <xacro:mir_200 ns_prefix="$(arg robot_namespace)" prefix="$(arg tf_prefix)"/>
 
     <!--The position of the model was measured using laser scachild_frame="$(arg tf_prefix)wrist_3_link_ur5" nner. See Florian's master thesis-->
     <joint name="robot_to_ur5" type="fixed">

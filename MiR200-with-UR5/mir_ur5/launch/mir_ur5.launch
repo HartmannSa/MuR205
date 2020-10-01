@@ -35,7 +35,7 @@
       <param name="robot_description" 
             command="$(find xacro)/xacro $(find mir_ur5_description)/urdf/mir_ur5.urdf.xacro 
             transmission_hw_interface1:=$(arg transmission_hw_interface1) 
-            transmission_hw_interface2:=$(arg transmission_hw_interface2) tf_prefix:=$(arg tf_prefix)" />
+            transmission_hw_interface2:=$(arg transmission_hw_interface2) tf_prefix:=$(arg tf_prefix) robot_namespace:=$(arg robot_namespace)" />
 
       <!-- <param name="/robot_description" 
             command="$(find xacro)/xacro $(find mir_ur5_description)/urdf/mir_ur5.urdf.xacro 
