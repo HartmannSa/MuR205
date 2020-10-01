@@ -204,7 +204,6 @@
       <child link="${prefix}back_laser_link" />
       <origin xyz="-0.3548 -0.2352 0.1914" rpy="0.0 0.0 ${-0.75 * pi}" />  <!-- from visually matching up the meshes of the MiR and the laser scanner -->
     </joint>
-
     <xacro:sick_s300 tf_prefix="${prefix}" link="back_laser_link" topic="b_scan" />
 
     <!-- Ultrasound sensors -->
@@ -286,7 +285,8 @@
         so that ros and opencv can operate on the camera frame correctly -->
     <!-- these values have to be these values otherwise the gazebo camera image
         won't be aligned properly with the frame it is supposedly originating from --> 
-    <xacro:sensor_d435 parent="${prefix}base_link" topics_ns="${ns_prefix}" tf_prefix="${prefix}">
+
+    <xacro:sensor_d435 name="/camera_base" parent="${prefix}base_link" topics_ns="${ns_prefix}" tf_prefix="${prefix}">
       <origin xyz="0.42 0 0.27" rpy="0 0.2 0"/>
     </xacro:sensor_d435>
 

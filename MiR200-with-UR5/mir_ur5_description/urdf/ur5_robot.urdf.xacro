@@ -7,6 +7,7 @@
   <xacro:arg name="transmission_hw_interface1" default="hardware_interface/PositionJointInterface"/>
   <xacro:arg name="transmission_hw_interface2" default="hardware_interface/VelocityJointInterface"/>
   <xacro:arg name="tf_prefix" default=''/>
+  <xacro:arg name="robot_namespace" default=''/>
 
   <!-- common stuff -->
   <!-- <xacro:include filename="$(find ur_description)/urdf/common.gazebo.xacro" /> -->
@@ -15,7 +16,7 @@
   <xacro:include filename="$(find mir_ur5_description)/urdf/ur5.urdf.xacro" />
 
   <!-- arm -->
-  <xacro:ur5_robot prefix="$(arg tf_prefix)" joint_limited="true" transmission_hw_interface1="$(arg transmission_hw_interface1)" transmission_hw_interface2="$(arg transmission_hw_interface2)"/>
+  <xacro:ur5_robot prefix="$(arg tf_prefix)" ns_prefix="$(arg robot_namespace)" joint_limited="true" transmission_hw_interface1="$(arg transmission_hw_interface1)" transmission_hw_interface2="$(arg transmission_hw_interface2)"/>
   <!--As MoveIt! seems to have difficulties with finding plans for the UR with full joint limits [-2pi, 2pi], 
   there is a joint_limited version using joint limits restricted to [-pi,pi]. In order to use this joint limited version set joint_limited="true"-->
 
